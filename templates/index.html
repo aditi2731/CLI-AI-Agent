@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLI AI Agent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🤖 CLI AI Agent</h1>
+            <div class="status-indicator">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="statusText">Connecting...</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Terminal Section -->
+            <div class="terminal-section">
+                <div class="section-header">
+                    <h2>📟 Terminal</h2>
+                    <button class="clear-btn" onclick="clearTerminal()">Clear</button>
+                </div>
+                <div class="terminal" id="terminal">
+                    <div class="terminal-line">
+                        <span class="prompt">C:\Users\aditi&gt;</span>
+                        <span class="cursor">_</span>
+                    </div>
+                </div>
+                <div class="terminal-input-container">
+                    <span class="prompt">C:\Users\aditi&gt;</span>
+                    <input type="text" id="terminalInput" class="terminal-input" placeholder="Type your command here..." autocomplete="off">
+                </div>
+            </div>
+
+            <!-- AI Assistant Section -->
+            <div class="assistant-section">
+                <div class="section-header">
+                    <h2>🤖 AI Assistant</h2>
+                    <button class="clear-btn" onclick="clearChat()">Clear Chat</button>
+                </div>
+                <div class="chat-container" id="chatContainer">
+                    <div class="message assistant-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <p>Hello! I'm your CLI AI Assistant. I'll help you fix terminal errors and suggest the right commands. Try running a command in the terminal!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chatInput" class="chat-input" placeholder="Ask me anything about terminal commands..." autocomplete="off">
+                    <button class="send-btn" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

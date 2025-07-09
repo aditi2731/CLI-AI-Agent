@@ -1,0 +1,334 @@
+diti\Desktop\Project-AI\CLI-AI-Agent\static\style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+    color: #cdd6f4;
+    height: 100vh;
+    /*overflow: hidden;*/
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background: #11111b;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #45475a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    color: #cba6f7;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #f38ba8;
+    animation: pulse 2s infinite;
+}
+
+.status-dot.connected {
+    background: #a6e3a1;
+    animation: none;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: #45475a;
+}
+
+/* Sections */
+.terminal-section, .assistant-section {
+    background: #1e1e2e;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-header {
+    background: #181825;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #45475a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header h2 {
+    color: #f9e2af;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.clear-btn {
+    background: #f38ba8;
+    color: #11111b;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.clear-btn:hover {
+    background: #eba0ac;
+    transform: translateY(-1px);
+}
+
+/* Terminal */
+.terminal {
+    flex: 1;
+    background: #11111b;
+    font-family: 'Fira Code', monospace;
+    padding: 1rem;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.terminal-line {
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.prompt {
+    color: #89b4fa;
+    font-weight: 500;
+}
+
+.command {
+    color: #cdd6f4;
+    margin-left: 0.5rem;
+}
+
+.output {
+    color: #a6e3a1;
+    margin-left: 1rem;
+    white-space: pre-wrap;
+}
+
+.error {
+    color: #f38ba8;
+    margin-left: 1rem;
+    white-space: pre-wrap;
+}
+
+.cursor {
+    color: #cdd6f4;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.terminal-input-container {
+    background: #11111b;
+    padding: 1rem;
+    border-top: 1px solid #45475a;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Fira Code', monospace;
+}
+
+.terminal-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #cdd6f4;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    outline: none;
+}
+
+/* Chat Assistant */
+.chat-container {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.message-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.assistant-message .message-avatar {
+    background: #cba6f7;
+}
+
+.user-message .message-avatar {
+    background: #89b4fa;
+}
+
+.user-message {
+    flex-direction: row-reverse;
+}
+
+.message-content {
+    background: #313244;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.user-message .message-content {
+    background: #89b4fa;
+    color: #11111b;
+}
+
+.assistant-message .message-content {
+    background: #313244;
+    color: #cdd6f4;
+}
+
+.message-content p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.message-content code {
+    background: #45475a;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+}
+
+.chat-input-container {
+    background: #181825;
+    padding: 1rem;
+    border-top: 1px solid #45475a;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chat-input {
+    flex: 1;
+    background: #313244;
+    border: 1px solid #45475a;
+    border-radius: 8px;
+    padding: 0.75rem;
+    color: #cdd6f4;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.chat-input:focus {
+    border-color: #89b4fa;
+}
+
+.send-btn {
+    background: #89b4fa;
+    color: #11111b;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.send-btn:hover {
+    background: #74c7ec;
+    transform: translateY(-1px);
+}
+
+/* Scrollbar */
+.terminal::-webkit-scrollbar,
+.chat-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.terminal::-webkit-scrollbar-track,
+.chat-container::-webkit-scrollbar-track {
+    background: #11111b;
+}
+
+.terminal::-webkit-scrollbar-thumb,
+.chat-container::-webkit-scrollbar-thumb {
+    background: #45475a;
+    border-radius: 3px;
+}
+
+.terminal::-webkit-scrollbar-thumb:hover,
+.chat-container::-webkit-scrollbar-thumb:hover {
+    background: #585b70;
+}
+
+/* Loading animation */
+.loading {
+    display: flex;
+    gap: 4px;
+    padding: 1rem;
+}
+
+.loading-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #89b4fa;
+    animation: loading 1.4s infinite ease-in-out both;
+}
+
+.loading-dot:nth-child(1) { animation-delay: -0.32s; }
+.loading-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes loading {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
