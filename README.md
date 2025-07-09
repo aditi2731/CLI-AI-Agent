@@ -19,12 +19,4 @@ It's basically a web-based terminal that has an AI buddy sitting right next to i
   - You're tired of context-switching between terminal and browser.
   - You want to see what modern AI can do with terminal assistance.
  
- ## Quick start:
-
-\`\`\`bash
-git clone https://github.com/aditi2731/CLI-AI-Agent.git
-cd CLI-AI-Agent
-pip install -r requirements.txt
-# Add your Groq API key to .env file
-python backend.py
-\`\`\`
+ 
